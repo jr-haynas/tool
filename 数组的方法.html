@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+	    // var ary = [12,15,56,14,85];
+	    /*
+	     * 增加，删除，修改
+	    */
+	    // var res = ary.push(21,25);
+	    // console.log(ary);
+	    // console.log(res); //返回的是新数组的长度
+
+	    // var res = ary.unshift(12);
+	    // console.log(ary); //返回的是新数组的长度
+	    // console.log(res);
+
+	    // var res = ary.splice(1,0,23);
+	    // console.log(res); // 返回的是空数组
+	    // console.log(ary);
+
+	    // var res = ary.splice(1,1);
+	    // console.log(res); // 返回的是新数组
+	    // console.log(ary);
+
+	    // var res = ary.splice(1,1,54);
+	    // console.log(res); // 返回的是删除的元素
+	    // console.log(ary);
+
+	    // splice(0,0,n) ==> unshift(n);
+	    // splice(ary.length,0,n) ==> push(n)
+
+	    // pop 删除最后一个，返回的是删除的那一个
+	    // shift删除第一个，返回的是删除的那一个
+
+
+	    /*
+	     * 查找，复制
+	    */
+	    // var ary = [12,15,56,14,85];
+	    // var res = ary.slice();
+	    // console.log(ary);
+	    // console.log(res);
+
+	    // var ary = [12,15,56,14,85];
+	    // var ary2 = ["实例"];
+	    // var res = ary.concat(ary2);
+	    // console.log(ary);
+	    // console.log(res);
+
+	    /*
+	     * 数组转化成字符串
+	    */
+	    // toString  原有数组不变
+	    // var ary = [12,15,56,14,85];
+	    // var res = ary.toString();
+	    // var res = ary.join("+");
+	    // console.log(ary);
+	    // console.log(res);
+
+	    // var total = "";
+	    // for(i=0;i<ary.length;i++){
+	    // 	total += ary[i];
+	    // }
+	    // console.log(total);
+
+	    // console.log(eval(res));
+
+	    /*
+	     * 排列，排序
+	    */
+	    // var ary = [12,10,56,14,85,17];
+	    // ary.sort(function(a,b){
+	    // 	// return a-b;
+	    // 	console.log(a+"<==>"+b);
+	    // });
+	   // console.log(ary);
+	   // console.log(ary.reverse());
+
+
+	   function arraySort(){
+	       for(i=0;i<ary.length-1;i++){
+	       	    for(j=0;j<ary.length-1-i;j++){
+	       	    	var cur = ary[j];
+	       	    	var next = ary[j+1];
+	       	    	if(cur > next){
+	       	    		var temp = null;
+	       	    		    temp = ary[j];
+	       	    		    ary[j] = ary[j+1];
+	       	    		    ary[j+1] = temp;
+	       	    	}
+
+	       	    }
+
+	       }
+	   }
+	   var ary = [12,10,56,14,85,17];
+	   arraySort(ary);
+	   console.log(ary);
+
+	</script>
+</body>
+</html>

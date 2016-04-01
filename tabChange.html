@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>tabChange</title>
+	<link rel="stylesheet" href="">
+	<style>
+	body,ul,li{ margin: 0; padding: 0; }
+	ul,li{ list-style:none;}
+	#tab{ width:310px; height:30px; margin: 30px auto 0; }
+	#tab ul li{ float: left; line-height:30px; border:#ccc 1px solid; width: 100px; text-align: center; margin-left:1px;}
+	#tab ul li.select{ background: red; color: #fff;}
+	.clear:after{ content:""; clear:both; display:block;}
+	#tab div{ display: none; width:310px; height:200px; border:#ccc 1px solid; margin:0 auto;}
+	.active{ display: block !important; }
+	</style>
+</head>
+
+<body>
+	<div id="tab">
+	    <ul class="clear">
+	    	<li class="select">新闻列表</li>
+	    	<li>视频列表</li>
+	    	<li>图片列表</li>
+	    </ul>
+	    <div class="active">新闻列表内容</div>
+		<div>视频列表内容</div>
+		<div>图片列表内容</div>
+	</div>
+
+	<script type="text/javascript">
+	//     var oTab = document.getElementById("tab");
+	//     var oLis = oTab.getElementsByTagName("li");
+	//     var oDivs = oTab.getElementsByTagName("div");
+
+	//     function tabChange(nIndex){
+	//     	for(i=0; i<oLis.length; i++){
+	//     	    oLis[i].className = "";
+	//     	    oDivs[i].className = "";
+	//         }
+	//         oLis[nIndex].className = "select";
+	//         oDivs[nIndex].className = "active";
+	//     }
+	//     for(i=0; i<oLis.length; i++){
+	//     	 oLis[i].haynas = i;
+	//     	 oLis[i].onclick = function(){
+	//     	 	tabChange(this.haynas);
+	//     	 }
+	//     }
+	    var oTab = document.getElementById("tab");
+	    var oLis = oTab.getElementsByTagName("li");
+	    var oDiv = oTab.getElementsByTagName("div");
+	    function tabChange(nIndex){
+	    	for(i=0;i<oLis.length;i++){
+	    	    oLis[i].className = null;
+	    	    oDiv[i].className = null;
+	        }
+	        oLis[nIndex].className = "select";
+	    	oDiv[nIndex].className = "active";
+	    }
+	    for(i=0;i<oLis.length;i++){
+	    	oLis[i].onclick = function(){
+	    		oLis[i].haynas = i;
+	    		tabChange(oLis[i].haynas);
+	    	}
+	    }
+	</script>
+</body>
+</html>
